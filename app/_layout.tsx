@@ -1,23 +1,13 @@
-import { Link } from "expo-router";
-import { SafeAreaView, Text } from "react-native";
+import { Stack } from "expo-router";
 
-export default async function Layout() {
+export default function Layout() {
 
-    return (
-        <SafeAreaView>
+    return <Stack
+        screenOptions={{ headerShown: false }}
+    >
 
-            <Link href={"/explore"}>
-                <Text>Explore</Text>
-            </Link>
+    <Stack.Screen name="(nobottombar)" options={{ headerShown:true , headerTitle: 'Account Info' , headerBackTitle:'GO BACK'}} />
 
-            <Link href={"/foryou"}>
-                <Text>Foryou</Text>
-            </Link>
-
-            <Link href={"/account"}>
-                <Text>account</Text>
-            </Link>
-
-        </SafeAreaView>
-    )
-}
+    
+    </Stack>
+} 
